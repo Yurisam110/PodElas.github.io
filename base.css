@@ -1,0 +1,771 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* =========================
+   CORES DO SITE
+========================= */
+
+:root {
+    --background-color: #70519b;
+    --background-dark: #5b3d82;
+    --background-light: #8867b3;
+
+    --button-color: #f5f3f7;
+    --button-hover: #ffffff;
+
+    --text-color: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.75);
+
+    --watermark-color: rgba(255, 255, 255, 0.055);
+
+    --dark-overlay: rgba(55, 35, 80, 0.45);
+    --border-color: rgba(255, 255, 255, 0.18);
+
+    --shadow-color: rgba(35, 20, 55, 0.3);
+}
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            var(--background-light),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #563a78,
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            var(--background-color),
+            var(--background-dark)
+        );
+
+    color: var(--text-color);
+
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   MARCA D'ÁGUA
+========================= */
+
+.watermark {
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-size: clamp(110px, 22vw, 360px);
+
+    font-weight: 900;
+
+    letter-spacing: -12px;
+
+    color: var(--watermark-color);
+
+    white-space: nowrap;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    z-index: 0;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    width: 100%;
+
+    padding: 28px 7%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 10;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.logo {
+    color: var(--text-color);
+
+    text-decoration: none;
+
+    font-size: 23px;
+
+    font-weight: 900;
+
+    letter-spacing: -1.5px;
+
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.03);
+}
+
+.logo span {
+    opacity: 0.55;
+}
+
+/* =========================
+   MENU
+========================= */
+
+.nav {
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+}
+
+.nav a {
+    color: var(--text-color);
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    opacity: 0.7;
+
+    transition: 0.25s;
+}
+
+.nav a:hover {
+    opacity: 1;
+
+    transform: translateY(-2px);
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.back-button {
+    color: var(--text-color);
+
+    text-decoration: none;
+
+    padding: 12px 22px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 100px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    transition: 0.3s;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.14);
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 10px 30px var(--shadow-color);
+}
+
+/* =========================
+   ÍCONE DO APLICATIVO
+========================= */
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+
+    margin: 0 auto 30px;
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 20px 45px rgba(25, 10, 45, 0.35);
+
+    transition: transform 0.3s;
+}
+
+.app-icon:hover {
+    transform: translateY(-8px) scale(1.05);
+}
+
+.app-icon img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+/* =========================
+   PÁGINA INICIAL
+========================= */
+
+.hero {
+    flex: 1;
+
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.hero-content {
+    width: 100%;
+
+    max-width: 950px;
+
+    text-align: center;
+
+    animation: appear 0.8s ease;
+}
+
+/* =========================
+   TAG
+========================= */
+
+.tag {
+    display: inline-block;
+
+    margin-bottom: 25px;
+
+    padding: 9px 18px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 100px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    color: var(--text-color);
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================
+   TÍTULO PRINCIPAL
+========================= */
+
+.hero h1 {
+    font-size: clamp(60px, 10vw, 145px);
+
+    font-weight: 900;
+
+    line-height: 0.9;
+
+    letter-spacing: -7px;
+
+    margin-bottom: 35px;
+
+    text-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.hero h1 span {
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* =========================
+   DESCRIÇÃO
+========================= */
+
+.description {
+    max-width: 650px;
+
+    margin: 0 auto 45px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: var(--text-muted);
+}
+
+/* =========================
+   BOTÕES PRINCIPAIS
+========================= */
+
+.main-button,
+.download-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    background: var(--button-color);
+
+    color: var(--background-dark);
+
+    text-decoration: none;
+
+    padding: 19px 32px;
+
+    border-radius: 100px;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    border: none;
+
+    box-shadow:
+        0 15px 35px rgba(25, 10, 45, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+
+    transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        background 0.3s;
+}
+
+.main-button span,
+.download-button span {
+    font-size: 22px;
+
+    transition: transform 0.3s;
+}
+
+.main-button:hover,
+.download-button:hover {
+    background: var(--button-hover);
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 22px 45px rgba(25, 10, 45, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.main-button:hover span {
+    transform: translateX(5px);
+}
+
+.download-button:hover span {
+    transform: translateY(3px);
+}
+
+/* =========================
+   PÁGINA SOBRE
+========================= */
+
+.about-page {
+    flex: 1;
+
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.about-content {
+    width: 100%;
+
+    max-width: 850px;
+
+    text-align: center;
+
+    animation: appear 0.8s ease;
+}
+
+.about-content h1 {
+    font-size: clamp(50px, 8vw, 100px);
+
+    font-weight: 900;
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 40px;
+
+    text-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.about-content h1 span {
+    opacity: 0.6;
+}
+
+/* =========================
+   CAIXA SOBRE
+========================= */
+
+.about-box {
+    background: var(--dark-overlay);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 30px;
+
+    padding: 50px;
+
+    margin-bottom: 35px;
+
+    text-align: left;
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    box-shadow:
+        0 25px 70px rgba(25, 10, 45, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.about-box h2 {
+    font-size: 24px;
+
+    margin-top: 30px;
+
+    margin-bottom: 12px;
+}
+
+.about-box h2:first-child {
+    margin-top: 0;
+}
+
+.about-box p {
+    color: var(--text-muted);
+
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+/* =========================
+   PÁGINA DOWNLOAD
+========================= */
+
+.download-page {
+    flex: 1;
+
+    min-height: calc(100vh - 160px);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 70px 20px;
+
+    position: relative;
+
+    z-index: 1;
+}
+
+.download-content {
+    width: 100%;
+
+    max-width: 760px;
+
+    text-align: center;
+
+    animation: appear 0.8s ease;
+}
+
+/* =========================
+   CAIXA DE INSTRUÇÕES
+========================= */
+
+.instructions-box {
+    background: var(--dark-overlay);
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 30px;
+
+    padding: 55px;
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    text-align: left;
+
+    margin-bottom: 32px;
+
+    box-shadow:
+        0 25px 70px rgba(25, 10, 45, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.instructions-box .tag {
+    margin-bottom: 22px;
+}
+
+.instructions-box h1 {
+    font-size: clamp(42px, 6vw, 70px);
+
+    font-weight: 900;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 18px;
+}
+
+.instructions-intro {
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: var(--text-muted);
+
+    margin-bottom: 42px;
+}
+
+/* =========================
+   PASSOS
+========================= */
+
+.steps {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+}
+
+.steps li {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 18px;
+
+    border-radius: 18px;
+
+    transition: 0.3s;
+}
+
+.steps li:hover {
+    background: rgba(255, 255, 255, 0.06);
+
+    transform: translateX(5px);
+}
+
+/* =========================
+   NÚMERO DO PASSO
+========================= */
+
+.step-number {
+    min-width: 48px;
+
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid var(--border-color);
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border-radius: 50%;
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.steps h3 {
+    font-size: 17px;
+
+    margin-bottom: 7px;
+}
+
+.steps p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: var(--text-muted);
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    position: relative;
+
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 28px 20px;
+
+    font-size: 12px;
+
+    color: rgba(255, 255, 255, 0.55);
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+
+@keyframes appear {
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 700px) {
+
+    .header {
+        padding: 22px 7%;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h1 {
+        letter-spacing: -4px;
+    }
+
+    .description {
+        font-size: 16px;
+
+        line-height: 1.7;
+    }
+
+    .app-icon {
+        width: 100px;
+        height: 100px;
+
+        border-radius: 24px;
+    }
+
+    .about-box {
+        padding: 30px 22px;
+
+        border-radius: 24px;
+    }
+
+    .about-content h1 {
+        letter-spacing: -3px;
+    }
+
+    .instructions-box {
+        padding: 32px 22px;
+
+        border-radius: 24px;
+    }
+
+    .instructions-box h1 {
+        letter-spacing: -2px;
+    }
+
+    .steps li {
+        padding: 12px 5px;
+
+        gap: 15px;
+    }
+
+    .watermark {
+        font-size: 25vw;
+
+        letter-spacing: -5px;
+    }
+
+    .main-button,
+    .download-button {
+        width: 100%;
+
+        padding: 18px 25px;
+    }
+}
